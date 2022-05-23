@@ -49,7 +49,7 @@ import './popup.css';
       let newCount;
 
       if (type === 'INCREMENT') {
-        newCount = count + 1;
+        newCount = count + 4;
       } else if (type === 'DECREMENT') {
         newCount = count - 1;
       } else {
