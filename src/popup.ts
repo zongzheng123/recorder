@@ -29,7 +29,8 @@ import './popup.css';
   };
 
   function setupCounter(initialValue = 0) {
-    document.getElementById('counter').innerHTML = initialValue;
+    
+    document.getElementById('counter').innerHTML = String(initialValue);
 
     document.getElementById('incrementBtn').addEventListener('click', () => {
       updateCounter({
@@ -49,7 +50,7 @@ import './popup.css';
       let newCount;
 
       if (type === 'INCREMENT') {
-        newCount = count + 4;
+        newCount = count + 6;
       } else if (type === 'DECREMENT') {
         newCount = count - 1;
       } else {

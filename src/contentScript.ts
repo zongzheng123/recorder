@@ -1,4 +1,5 @@
 'use strict';
+import { formRecord } from './lib/recorder/form-recorder'
 
 // Content script file will run in the context of web page.
 // With content script you can manipulate the web pages using
@@ -17,6 +18,7 @@ console.log(
   `Page title is: '${pageTitle}' - evaluated by Chrome extension's 'contentScript.js' file`
 );
 
+
 // Communicate with background file by sending a message
 chrome.runtime.sendMessage(
   {
@@ -34,6 +36,7 @@ chrome.runtime.sendMessage(
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.type === 'COUNT') {
     console.log(`Current count is ${request.payload.count}`);
+    console.log('++++++++++++')
   }
 
   // Send an empty response
@@ -41,3 +44,11 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   sendResponse({});
   return true;
 });
+
+
+window.setInterval(() => {
+  Promise.allSettled([formRecord()])
+}, 1000)
+
+
+

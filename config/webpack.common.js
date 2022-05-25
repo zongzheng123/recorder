@@ -26,6 +26,9 @@ const common = {
     assets: true,
     excludeAssets: [IMAGE_TYPES],
   },
+  resolve: {
+    extensions: [".ts", ".tsx", ".js"]
+  },
   module: {
     rules: [
       // Help webpack in understanding CSS files imported in .js files
@@ -33,6 +36,7 @@ const common = {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
+      { test: /\.(tsx|ts)?$/, loader: "ts-loader" },
       // Check for images imported in .js files and
       {
         test: IMAGE_TYPES,

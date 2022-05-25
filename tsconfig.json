@@ -1,0 +1,8 @@
+{
+    "compilerOptions": {
+      "sourceMap": true,
+      "target": "ESNEXT",
+      "module": "ESNEXT",
+      "esModuleInterop": true
+    }
+  }
